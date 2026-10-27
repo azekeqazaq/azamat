@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Электрлік термометрлерді монтаждау бойынша интерактивті оқу симуляторы">
+  <title>Электрлік термометрлерді монтаждау</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-icon">°</span><div><strong>THERMO LAB</strong><small>ОҚУ СИМУЛЯТОРЫ</small></div></div>
+    <div class="top-status"><span class="live-dot"></span> ВИРТУАЛДЫ ЗЕРТХАНА</div>
+  </header>
+
+  <main class="layout">
+    <section class="intro">
+      <div class="eyebrow">АВТОМАТТАНДЫРУ ЖӘНЕ БАСҚАРУ</div>
+      <h1>Электрлік термометрлерді <span>монтаждау</span></h1>
+      <p>Өндірістік құбырға температура датчигін орнатуды кезең-кезеңімен үйрен.</p>
+      <div class="type-switch" role="group" aria-label="Датчик түрін таңдау">
+        <button class="type-btn active" data-type="pt100">PT100 · Кедергілік</button>
+        <button class="type-btn" data-type="tc">Терможұп · Термоэлектрлік</button>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <aside class="steps-panel">
+        <div class="panel-heading"><span>МОНТАЖ КЕЗЕҢДЕРІ</span><span id="stepCount">1 / 7</span></div>
+        <div class="progress-track"><div id="progressBar"></div></div>
+        <nav id="stepNav" class="step-nav" aria-label="Монтаж кезеңдері"></nav>
+        <div class="safety-note"><span>⚠</span><div><b>Қауіпсіздік</b><p>Бұл — оқу симуляциясы. Нақты өндірістік монтажды тек оқытушының немесе білікті маманның бақылауымен, жабдық қауіпсіз ажыратылғанда орында.</p></div></div>
+      </aside>
+
+      <section class="work-panel">
+        <div class="work-head">
+          <div><div class="eyebrow" id="stepKicker">1-КЕЗЕҢ · ДАЙЫНДЫҚ</div><h2 id="stepTitle">Жұмыс орнын дайындау</h2></div>
+          <span class="step-pill" id="stepPill">01</span>
+        </div>
+        <div class="diagram-card">
+          <div class="diagram-label">МОНТАЖ СХЕМАСЫ · ВИРТУАЛДЫ КӨРІНІС</div>
+          <div class="diagram" id="diagram">
+            <div class="pipe"><span class="flow-arrow">→</span><span class="pipe-label">ӨНДІРІСТІК ҚҰБЫР</span></div>
+            <div class="nozzle"></div><div class="thermowell"></div><div class="sensor"></div>
+            <div class="cable"></div><div class="cabinet"><span>PLC</span><small>БАСҚАРУ ШКАФЫ</small></div>
+            <div class="diagram-caption" id="diagramCaption">Температура датчигін орнатуға дайындық</div>
+          </div>
+        </div>
+        <div class="instruction">
+          <h3>Осы кезеңде не істеу керек?</h3>
+          <p id="stepDescription"></p>
+          <div class="tip" id="stepTip"></div>
+        </div>
+        <div class="action-area" id="actionArea"></div>
+        <div class="feedback" id="feedback" aria-live="polite"></div>
+        <div class="nav-buttons">
+          <button class="btn secondary" id="backBtn">← Артқа</button>
+          <button class="btn primary" id="nextBtn">Келесі кезең →</button>
+        </div>
+      </section>
+    </section>
+
+    <section class="result-panel hidden" id="resultPanel">
+      <div class="result-icon">✓</div><div><div class="eyebrow">ОҚУ ЖҰМЫСЫ АЯҚТАЛДЫ</div><h2>Монтаж симуляциясы аяқталды!</h2><p id="resultText"></p></div>
+      <div class="result-score"><strong id="score">100</strong><span>БАЛЛ</span></div>
+      <button class="btn primary" id="restartBtn">Қайта бастау</button>
+    </section>
+
+    <footer>THERMO LAB · Электрлік термометрлерді монтаждау · Оқу мақсатында</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
